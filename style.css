@@ -1,0 +1,95 @@
+/*
+Theme Name: procamiao
+Theme URI: procamiao.com
+Author: Tiago Anastácio
+Author URI: github.com/ittca
+version: 2.2
+Description: Loja online de peças para pesados, disponibilizado em Portugal continental.
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: procamiao
+WordPress, is licensed under the GPL. however this theme is has copyrights and its use is not allow by the author without his consent.
+Tested up to: 5.7
+Requires PHP:7.4
+*/
+:root{
+  --pri: #EF7522;
+  --sec: #1B2332;
+  --ter: #fff;
+  --fundo: rgba(255,255,255,0.9);
+  --larg: 1300px;
+}
+a{text-decoration: none;}
+.alignleft {text-align:left;}
+.alignright {text-align:right;}
+.aligncenter{text-align: center;}
+.wp-caption{}
+.wp-caption-text{}
+.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.screen-reader-text{}
+.gallery-caption{}
+.bypostauthor{}
+*{padding:0;margin:0;font-family: Arial, Helvetica, sans-serif;}
+
+/* header */
+.cabeca-geral{background:#fff;}
+.cabeca-linha-geral{background: var(--pri);height:40px;}
+.cabeca{max-width: var(--larg);margin:0 auto;}
+.cabeca-logo{padding-top:5px;margin-bottom:-5px;margin-left:60px;}
+
+
+/* fim do header, início do footer
+.rodape-geral{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  } */
+.rodape{
+  background:var(--sec);
+  max-width:var(--larg);
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:-10px;
+  display:grid;
+  font-size:18px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.tc-footer1 div{margin-left:40px;margin-top:10px;}
+.tc-footer1 span{margin-right:10px;}
+.tc-email{margin-bottom:25px;}
+.tc-footer-logo img{max-width:250px;margin-top:10px;}
+.rodape a, .tc-footer1 .dashicons, .rodape h5{color:#fff;}
+.tc-footer1 a:hover, .tc-footer2 a:hover, .tc-footer3 a:hover, .tc-copyrights a:hover{color:var(--pri);}
+.tc-footer2 h5{margin-top:35px;font-size:18px;margin-bottom:17px;}
+.tc-footer2 p, .tc-footer3 p{margin-top:7px;}
+.tc-footer4{margin-top:6px;}
+.tc-footer4 h5{font-size: 17px;margin-bottom:10px;margin-top:25px;}
+.tc-siganos span{font-size:30px;margin-left:8px;margin-right:8px;}
+.tc-siganos span:hover, .tc-aceitamos img:hover{transform:scale(1.5);}
+.dashicons-whatsapp {color:#4DC85A;}
+.dashicons-facebook {color:#44619D;}
+.dashicons-twitter {color:#1DA1F2;}
+.tc-aceitamos img{max-height:30px;margin-left:5px;margin-right:5px;}
+.tc-copyrights{margin-top:15px;}
+@media screen and (min-width: 850px){
+  .rodape{grid-template-columns: 1fr 1fr 1fr 1fr;}
+  .tc-footer3{margin-top:65px;}
+}
+@media screen and (min-width: 500px) and (max-width: 849px){
+  .rodape{grid-template-columns: 1fr 1fr;}
+  .tc-footer1 {order:2;text-align: center;}
+  .tc-footer3 {order:1;}
+  .tc-footer4 {order:3;}
+  .tc-footer3{margin-top:65px;}
+}
+@media screen and (max-width: 499px){
+  .tc-footer1 {text-align: center;}
+  .tc-copyrights{margin-bottom:15px;}
+}
+/* fim do footer */
