@@ -55,7 +55,14 @@ if(isset($_POST['pag_default'])){
   <select name="pro_slider" class="tc_postbox">
     <option value="consultar">consultar</option>
     <option value="criar">criar </option>
-    <option value="apagar">Apagar todos os dados</option>
+  </select>
+  <input type="submit" value="executar"/>
+</form>
+<form class="" method="post">
+  <label for="pro_banners">Tabela dos banners</label>
+  <select name="pro_banners" class="tc_postbox">
+    <option value="consultar">consultar</option>
+    <option value="criar">criar </option>
   </select>
   <input type="submit" value="executar"/>
 </form>
@@ -93,8 +100,22 @@ if(isset($_POST['pro_slider'])){
      if ($escolhido == 'criar'){
        tc_criar_bd('pro_slider', 'id int auto_increment primary key, pos tinyint, link varchar(255)');
      }
-     if ($escolhido == 'apagar'){
-       tc_apagar_dt('pro_slider');
+  } else {
+    exit;
+  }
+}
+if(isset($_POST['pro_banners'])){
+  $opt = isset($_POST['pro_banners']) ? $_POST['pro_banners'] : false;
+  if ($opt) {
+     $escolhido = htmlentities($_POST['pro_banners'], ENT_QUOTES, "UTF-8");
+     if ($escolhido == 'consultar'){
+       echo '<br><br><b>tabela pro_banners</b>';
+       $dados = $wpdb->get_results('SELECT * FROM pro_banners');
+       echo '<pre>';
+       print_r($dados);
+     }
+     if ($escolhido == 'criar'){
+       tc_criar_bd('pro_banners', 'name varchar(40), link varchar(255)');
      }
   } else {
     exit;

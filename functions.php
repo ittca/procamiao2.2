@@ -88,6 +88,7 @@ if (! function_exists('topvendas')) {
 		  wp_reset_query();
 	}
 }
+
 if (! function_exists('criar_pag')) {
 	function criar_pag($titulo, $template){
 		$a = get_page_by_title( $titulo, 'post' );
